@@ -1,4 +1,4 @@
-import request from '@/utils/request'
+import request from '@/utils/uni_request'
 import {
   CreateDishesRequest,
   GetDishesRequest,
@@ -16,34 +16,34 @@ class DishesRequest {
   create(data: CreateDishesRequest): Promise<CreateDishesResponse> {
     return request({
       url: 'dish/create',
-      method: 'post',
+      method: 'POST',
       data: data,
     })
   }
   get(data: GetDishesRequest): Promise<GetDishesResponse> {
     return request({
       url: `dish/get/${data.id}`,
-      method: 'get',
+      method: 'GET',
     })
   }
   del(data: DelDishesRequest): Promise<DelDishesResponse> {
     return request({
       url: `dish/delete/${data.id}`,
-      method: 'delete',
+      method: 'DELETE',
     })
   }
   update(data: UpdateDishesRequest): Promise<UpdateDishesResponse> {
     return request({
       url: `dish/update`,
-      method: 'put',
+      method: 'PUT',
       data: data,
     })
   }
   list(data: ListDishesRequest): Promise<ListDishesResponse> {
     return request({
       url: `dish/list`,
-      method: 'get',
-      params: data,
+      method: 'GET',
+      data: data,
     })
   }
 }
