@@ -15,7 +15,7 @@ class Http {
   }
   constructor() {
     this.http = new LuchRequest()
-    this.http.setConfig((config) => {
+    this.http.setConfig((config: HttpRequestConfig) => {
       // 设置全局配置
       return Object.assign(config, this.globalConfig)
     })

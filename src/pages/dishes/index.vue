@@ -1,5 +1,17 @@
 <template>
-  <view class="content">home page</view>
+  <view class="content">
+    <view class="u-page">
+      <up-list>
+        <up-list-item v-for="item in dishList.dishes" :key="item.id">
+          <up-cell :title="item.name">
+            <template #icon>
+              <up-avatar shape="square" size="35" :src="item.logo" customStyle="margin: -3px 5px -3px 0"></up-avatar>
+            </template>
+          </up-cell>
+        </up-list-item>
+      </up-list>
+    </view>
+  </view>
 </template>
 
 <script setup lang="ts">
